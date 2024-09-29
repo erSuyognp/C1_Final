@@ -1,26 +1,24 @@
 /******************************************************************************
- * Copyright (C) 2017 by Alex Fosdick - University of Colorado
+ * Copyright (C) 2021 by @author
  *
  * Redistribution, modification or use of this software in source or binary
  * forms is permitted as long as the files maintain this copyright. Users are 
  * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * software. Josh Illes is not liable for any misuse of this material. 
  *
  *****************************************************************************/
 /**
- * @file stats.h 
- * @brief Declaration of functions used in stats.c 
+ * @file stats.c
+ * @brief Functions for providing statics on an array of numbers, 
+ *   and general practice in the "C" language
  *
- * Stater for C
- * @author <Suyog Neupane>
- * @date <9/18/2024 >
+ *
+ * @author Suyog Neupane
+ * @date 9/28/2024
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
-
-#include <stdint.h>  // Ensure that uint8_t and other integer types are defined
 
 /* Add Your Declarations and Function Comments here */ 
 
@@ -36,11 +34,12 @@ typedef struct stats{
 /**
  * @brief Print out all the statistics related to the array
  * 
- * @param ArrayStats Struct containing array and associated statistics
+ * @param arrayPtr Pointer to the array of data
+ * @param arrayLength Number of elements in the array
  * 
  * @return Void()
  */
-void print_statistics(stat ArrayStats);
+void print_statistics(uint8_t *arrayPtr, uint8_t arrayLength);
 
 
 /**
@@ -96,5 +95,6 @@ uint8_t find_mean(uint8_t *arrayPtr, uint8_t arrayLength);
  * @return uint8_t median value in array
  */
 uint8_t find_median(uint8_t *arrayPtr, uint8_t arrayLength);
+
 
 #endif /* __STATS_H__ */
